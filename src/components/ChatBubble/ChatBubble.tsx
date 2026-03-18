@@ -9,6 +9,29 @@ interface ChatBubbleProps {
 export default function ChatBubble({ message, showTimestamp = false }: ChatBubbleProps) {
   const isUser = message.role === 'user';
 
+  // 图片消息
+  if (message.contentType === 'image' && message.cardData?.imageUrl) {
+    return (
+      <div className={`${styles.wrapper} ${isUser ? styles.wrapperUser : styles.wrapperAi}`}>
+        <div className={styles.imageContainer}>
+          <img
+            src={message.cardData.imageUrl}
+            alt={message.text || '图片'}
+            className={styles.image}
+          />
+        </div>
+        {showTimestamp && (
+          <span className={styles.timestamp}>
+            {new Date(message.timestamp).toLocaleTimeString('zh-CN', {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </span>
+        )}
+      </div>
+    );
+  }
+
   return (
     <div className={`${styles.wrapper} ${isUser ? styles.wrapperUser : styles.wrapperAi}`}>
       <div className={`${styles.bubble} ${isUser ? styles.bubbleUser : styles.bubbleAi}`}>

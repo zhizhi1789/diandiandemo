@@ -12,9 +12,18 @@ const CORE_TIPS = [
 const COMMON_MISTAKE = '手肘打开>75度导致肩关节压力过大，容易造成肩部疼痛';
 const BEGINNER_TIP = '可以先从推胸机开始，掌握发力感后再过渡到自由卧推';
 
-export default function ExerciseAdviceCard() {
+interface ExerciseAdviceCardProps {
+  onUploadPhoto?: () => void;
+}
+
+export default function ExerciseAdviceCard({ onUploadPhoto }: ExerciseAdviceCardProps) {
   const [expandedNoteId, setExpandedNoteId] = useState<string | null>(null);
   const [showUploadMock, setShowUploadMock] = useState(false);
+
+  const handleUpload = () => {
+    setShowUploadMock(true);
+    onUploadPhoto?.();
+  };
 
   return (
     <StructuredCard>
@@ -93,7 +102,8 @@ export default function ExerciseAdviceCard() {
       {/* 上传动作截图 */}
       <button
         className={styles.uploadBtn}
-        onClick={() => setShowUploadMock(true)}
+        onClick={handleUpload}
+        disabled={showUploadMock}
       >
         📷 上传动作截图让我看看
       </button>

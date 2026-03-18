@@ -47,6 +47,7 @@ export default function AgentDetailPage() {
     handleAction,
     startChat,
     stopChat,
+    setMessages,
   } = useScriptedChat(
     script ?? {
       id: 'empty',
@@ -111,7 +112,22 @@ export default function AgentDetailPage() {
         }
 
         case 'exercise-advice': {
-          return <ExerciseAdviceCard />;
+          return (
+            <ExerciseAdviceCard
+              onUploadPhoto={() => {
+                const imageMsg: ChatMessage = {
+                  id: `user-photo-${Date.now()}`,
+                  role: 'user',
+                  contentType: 'image',
+                  text: '卧推动作截图',
+                  cardData: { imageUrl: '/images/bench-press.jpg' },
+                  timestamp: Date.now(),
+                  agentId: 'fitness-coach',
+                };
+                setMessages((prev) => [...prev, imageMsg]);
+              }}
+            />
+          );
         }
 
         case 'data-permission': {
@@ -160,7 +176,7 @@ export default function AgentDetailPage() {
           return null;
       }
     },
-    [handleAction],
+    [handleAction, setMessages],
   );
 
   return (

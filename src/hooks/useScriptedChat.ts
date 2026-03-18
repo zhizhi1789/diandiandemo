@@ -118,24 +118,27 @@ export function useScriptedChat(script: ChatScript) {
 
       // 验证触发条件
       if (node.trigger.type === 'user-input') {
-        if (node.trigger.matchText && node.trigger.matchText !== text) {
-          // matchText 不匹配，仍然追加用户消息但不推进
-        }
-
-        // 追加用户消息
-        const userMsg: ChatMessage = {
-          id: `user-${Date.now()}`,
-          role: 'user',
-          contentType: 'text',
-          text,
-          timestamp: Date.now(),
-          agentId: scriptRef.current.agentId,
-        };
-        setMessages((prev) => [...prev, userMsg]);
-
-        // 执行当前节点（节点的 messages 通常是 AI 回复）
-        executeNode(nodeId);
+      if (node.trigger.matchText && node.trigger.matchText !== text) {
+        // matchText 不匹配，仍然追加用户消息但不推进
       }
+
+      // 追加用户消息
+      const userMsg: ChatMessage = {
+        id: `user-${Date.now()}`,
+        role: 'user',
+        contentType: 'text',
+        text,
+        timestamp: Date.now(),
+        agentId: scriptRef.current.agentId,
+      };
+      setMessages((prev) => [...prev, userMsg]);
+
+      // 立即清除当前节点，避免预填充文本残留在输入框
+      setCurrentNodeId(null);
+
+      // 执行当前节点（节点的 messages 通常是 AI 回复）
+      executeNode(nodeId);
+    }
     },
     [findNode, executeNode],
   );

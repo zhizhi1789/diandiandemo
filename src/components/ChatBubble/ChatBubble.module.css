@@ -42,3 +42,19 @@
   margin-top: 4px;
   padding: 0 4px;
 }
+
+/* 图片消息 */
+.imageContainer {
+  max-width: 200px;
+  border-radius: var(--radius-image, 22px);
+  overflow: hidden;
+  border: 2px solid #FFFFFF;
+  filter: drop-shadow(0px 2px 16px rgba(0, 0, 0, 0.12));
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
