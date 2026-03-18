@@ -2,43 +2,56 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  background: var(--color-card-bg);
-  box-shadow: var(--color-card-shadow);
-  border-radius: var(--radius-card);
-  padding: 20px 22px;
+  padding: 14px var(--spacing-page-x, 20px);
   cursor: pointer;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background-color 0.15s ease;
 }
 
 .card:active {
-  transform: scale(0.98);
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.06);
+  background-color: rgba(20, 20, 20, 0.04);
 }
 
 .info {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-bottom: 0.5px solid rgba(20, 20, 20, 0.08);
+  padding-bottom: 14px;
+}
+
+/* 让最后一个卡片不显示分割线 */
+.card:last-child .info {
+  border-bottom: none;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .name {
   font-size: 17px;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 24px;
-  color: var(--color-text-primary);
+  color: var(--color-text-primary, #141414);
 }
 
-.description {
-  font-size: 13px;
-  line-height: 18px;
-  color: var(--color-text-secondary);
-  margin-top: 2px;
+.time {
+  font-size: 12px;
+  line-height: 17px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-watermark, rgba(20, 20, 20, 0.2));
+  flex-shrink: 0;
 }
 
 .lastMessage {
-  font-size: 13px;
-  line-height: 18px;
-  color: var(--color-text-tertiary);
-  margin-top: 6px;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-tertiary, rgba(20, 20, 20, 0.4));
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

@@ -1,11 +1,13 @@
 .tabBar {
-  height: 50px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-around;
   background: var(--color-bg-bottombar);
   border-top: 0.5px solid rgba(20, 20, 20, 0.08);
   flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  position: relative;
 }
 
 .tab {
@@ -17,10 +19,11 @@
   position: relative;
   padding: 4px 20px;
   transition: color 0.2s ease;
+  flex: 1;
 }
 
 .tab.active {
-  color: var(--color-brand-solid);
+  color: var(--color-brand-solid, #4FCFBC);
 }
 
 .tabLabel {
@@ -38,4 +41,28 @@
   background: #FF3B30;
   border-radius: 50%;
   border: 1.5px solid var(--color-bg-bottombar);
+}
+
+/* 中间圆形语音按钮 - 使用品牌薄荷绿 */
+.voiceButton {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #7EDBCE, #76D6C5, #6FD2BD);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 4px 14px rgba(79, 207, 188, 0.35);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  margin-top: -20px;
+}
+
+.voiceButton:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 8px rgba(79, 207, 188, 0.45);
+  background: rgba(79, 207, 188, 0.95);
 }

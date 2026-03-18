@@ -13,9 +13,29 @@ interface AgentAvatarProps {
 }
 
 export default function AgentAvatar({ agentId, size = 48 }: AgentAvatarProps) {
+  const agent = agents.find((a) => a.id === agentId);
+
+  // 如果有图片头像，使用方形图片
+  if (agent?.avatar) {
+    return (
+      <div
+        className={styles.avatarImg}
+        style={{ width: size, height: size, borderRadius: size * 0.2 }}
+      >
+        <img
+          src={agent.avatar}
+          alt={agent.name}
+          width={size}
+          height={size}
+          style={{ borderRadius: size * 0.2 }}
+        />
+      </div>
+    );
+  }
+
+  // fallback: 渐变色文字头像
   const colors = AGENT_COLORS[agentId] ?? ['#CCCCCC', '#AAAAAA'];
   const [from, to] = colors;
-  const agent = agents.find((a) => a.id === agentId);
   const initial = agent?.icon ?? '?';
   const gradId = `avatar-grad-${agentId}`;
 
@@ -28,7 +48,15 @@ export default function AgentAvatar({ agentId, size = 48 }: AgentAvatarProps) {
             <stop offset="100%" stopColor={to} />
           </linearGradient>
         </defs>
-        <circle cx="24" cy="24" r="24" fill={`url(#${gradId})`} />
+        <rect
+          x="0"
+          y="0"
+          width="48"
+          height="48"
+          rx="10"
+          ry="10"
+          fill={`url(#${gradId})`}
+        />
         <text
           x="24"
           y="24"

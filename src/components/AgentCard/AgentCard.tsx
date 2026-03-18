@@ -12,10 +12,12 @@ export default function AgentCard({ agent }: AgentCardProps) {
 
   return (
     <div className={styles.card} onClick={() => navigate(`/agent/${agent.id}`)}>
-      <AgentAvatar agentId={agent.id} size={48} />
+      <AgentAvatar agentId={agent.id} size={52} />
       <div className={styles.info}>
-        <div className={styles.name}>{agent.name}</div>
-        <div className={styles.description}>{agent.description}</div>
+        <div className={styles.topRow}>
+          <span className={styles.name}>{agent.name}</span>
+          <span className={styles.time}>昨天</span>
+        </div>
         {agent.lastMessage && (
           <div className={styles.lastMessage}>{agent.lastMessage}</div>
         )}

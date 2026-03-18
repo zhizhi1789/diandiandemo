@@ -2,34 +2,15 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: var(--color-bg-page, #F3F3F3);
 }
 
 .content {
   flex: 1;
   overflow-y: auto;
-  padding: 16px var(--spacing-page-x) 20px;
 }
 
-.greeting {
-  margin-bottom: 24px;
-}
-
-.hello {
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 36px;
-  color: var(--color-text-primary);
-  margin-bottom: 4px;
-}
-
-.subtitle {
-  font-size: 16px;
-  line-height: 24px;
-  color: var(--color-text-secondary);
-}
-
-.agentList {
+.chatList {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }

@@ -8,6 +8,7 @@ export interface Agent {
   colorFrom: string;
   colorTo: string;
   icon: string;
+  avatar?: string;
 }
 
 export interface Exercise {
