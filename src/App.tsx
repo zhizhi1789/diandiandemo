@@ -7,7 +7,7 @@ import AgentDetailPage from '@/features/agent-detail/AgentDetailPage';
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
