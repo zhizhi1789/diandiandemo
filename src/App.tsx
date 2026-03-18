@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import AppShell from '@/components/AppShell';
 import DemoController from '@/components/DemoController';
 import HomePage from '@/features/home/HomePage';
@@ -7,7 +7,7 @@ import AgentDetailPage from '@/features/agent-detail/AgentDetailPage';
 
 export default function App() {
   return (
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <HashRouter>
       <Routes>
         <Route element={<AppShell />}>
           <Route index element={<HomePage />} />
@@ -16,6 +16,6 @@ export default function App() {
         </Route>
       </Routes>
       <DemoController />
-    </BrowserRouter>
+    </HashRouter>
   );
 }
