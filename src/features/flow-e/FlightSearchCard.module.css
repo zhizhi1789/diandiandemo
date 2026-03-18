@@ -1,0 +1,160 @@
+/* ===== 机票搜索结果卡片 ===== */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.subtitle {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+/* --- 航班信息容器 --- */
+
+.flightInfo {
+  background: #FFFFFF;
+  border: 0.5px solid var(--color-border-input);
+  border-radius: var(--radius-option);
+  overflow: hidden;
+}
+
+/* --- 单程航班信息 --- */
+
+.flightLeg {
+  padding: 14px 16px;
+}
+
+.flightLeg + .flightLeg {
+  border-top: 0.5px solid var(--color-border-input);
+}
+
+.legDate {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.legRoute {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legTime {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.legAirport {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+
+.legArrow {
+  font-size: 14px;
+  color: var(--color-text-tertiary);
+  flex-shrink: 0;
+}
+
+.legEndpoint {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* --- 航空公司 & 价格行 --- */
+
+.airlineRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-top: 0.5px solid var(--color-border-input);
+  background: rgba(243, 243, 243, 0.5);
+}
+
+.airline {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--color-brand-solid);
+}
+
+/* --- 操作按钮组 --- */
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actionBtn {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  border-radius: var(--radius-option);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.actionBtn:active {
+  transform: scale(0.97);
+}
+
+.actionSecondary {
+  color: var(--color-text-primary);
+  background: #FFFFFF;
+  border: 0.5px solid var(--color-border-unselected);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.01);
+}
+
+.actionPrimary {
+  color: #FFFFFF;
+  background: var(--color-brand-solid);
+  border: none;
+}
+
+.actionDisabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.actionDisabled:active {
+  transform: none;
+}
+
+.selectedBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-brand-solid);
+  background: var(--color-decor-light-green);
+  border-radius: var(--radius-option);
+}

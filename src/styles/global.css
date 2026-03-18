@@ -1,0 +1,166 @@
+/* ==========================================
+   点点 Demo - 全局样式 & CSS 变量
+   基于视觉规范文档
+   ========================================== */
+
+:root {
+  /* --- 颜色 --- */
+  --color-bg-page: #F3F3F3;
+  --color-bg-topbar: rgba(243, 243, 243, 0.98);
+  --color-bg-bottombar: #F7F7F7;
+
+  --color-bubble-user: #E6E6E6;
+  --color-bubble-user-border: #FAFAFA;
+  --color-bubble-ai: #FFFFFF;
+  --color-bubble-ai-border: #EDEDED;
+
+  --color-card-bg: rgba(255, 255, 255, 0.8);
+  --color-card-shadow: 0px 0px 10px rgba(0, 0, 0, 0.04);
+
+  --color-brand-primary: rgba(79, 207, 188, 0.95);
+  --color-brand-solid: #4FCFBC;
+  --color-brand-gradient: linear-gradient(135deg, #7EDBCE, #76D6C5, #6FD2BD);
+  --color-brand-selected: linear-gradient(0deg, rgba(111, 210, 189, 0.06), rgba(111, 210, 189, 0.06)), #FFFFFF;
+
+  --color-text-primary: #141414;
+  --color-text-secondary: rgba(20, 20, 20, 0.6);
+  --color-text-tertiary: rgba(20, 20, 20, 0.4);
+  --color-text-placeholder: rgba(20, 20, 20, 0.16);
+  --color-text-watermark: rgba(20, 20, 20, 0.2);
+  --color-text-watermark-light: rgba(20, 20, 20, 0.09);
+  --color-text-white: #FFFFFF;
+  --color-icon: rgba(20, 20, 20, 0.8);
+
+  --color-border-unselected: rgba(20, 20, 20, 0.24);
+  --color-border-input: rgba(20, 20, 20, 0.1);
+
+  --color-decor-light-green: #DFF7F3;
+  --color-decor-green-border: #BDEFE6;
+  --color-decor-green-border-2: #D1F1EB;
+  --color-decor-green-transparent: rgba(211, 244, 238, 0.2);
+
+  /* --- 字体 --- */
+  --font-primary: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  --font-system: 'SF Pro', -apple-system, sans-serif;
+
+  /* --- 圆角 --- */
+  --radius-page: 48px;
+  --radius-card: 36px;
+  --radius-bottombar: 28px;
+  --radius-bubble: 22px;
+  --radius-image: 22px;
+  --radius-decor: 19px;
+  --radius-image-card: 17px;
+  --radius-input: 16px;
+  --radius-decor-inner: 13px;
+  --radius-option: 12px;
+  --radius-cta: 100px;
+
+  /* --- 间距 --- */
+  --spacing-page-x: 20px;
+  --spacing-message-large: 28px;
+  --spacing-message-small: 8px;
+  --spacing-card-gap: 26px;
+  --spacing-bubble-padding-y: 12px;
+  --spacing-bubble-padding-x: 16px;
+  --spacing-option-gap: 6px;
+  --spacing-option-vertical-gap: 8px;
+
+  /* --- 尺寸 --- */
+  --size-page-width: 393px;
+  --size-page-height: 852px;
+  --size-statusbar-height: 59px;
+  --size-navbar-height: 54px;
+  --size-header-total: 113px;
+  --size-inputbar-height: 96px;
+  --size-home-indicator: 38px;
+  --size-content-width: 353px;
+  --size-bubble-max-width: 293px;
+  --size-input-height: 48px;
+  --size-option-height: 40px;
+  --size-icon: 24px;
+  --size-avatar: 32px;
+}
+
+/* === 全局重置 === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.02em;
+  color: var(--color-text-primary);
+  background: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* 禁用文字选中（Demo用） */
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+input, textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  border: none;
+  outline: none;
+  background: none;
+}

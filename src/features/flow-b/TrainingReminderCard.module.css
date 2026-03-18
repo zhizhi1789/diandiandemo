@@ -1,0 +1,79 @@
+/* ===== 训练提醒卡片 ===== */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* ===== 训练信息 ===== */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.infoRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.infoLabel {
+  color: var(--color-text-secondary);
+}
+
+.infoValue {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ===== 准备事项 ===== */
+
+.prepSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prepTitle {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.prepList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prepItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+}
+
+.dot {
+  color: var(--color-brand-solid);
+  font-size: 18px;
+  flex-shrink: 0;
+}

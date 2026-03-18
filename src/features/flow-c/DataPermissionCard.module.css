@@ -1,0 +1,66 @@
+/* ===== 数据权限请求卡片 ===== */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-secondary);
+}
+
+/* --- 权限选项 --- */
+
+.optionGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.option {
+  padding: 8px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--color-text-primary);
+  background: #FFFFFF;
+  border: 0.5px solid var(--color-border-unselected);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.01);
+  border-radius: var(--radius-option);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option:active {
+  transform: scale(0.97);
+}
+
+.optionSelected {
+  background: var(--color-brand-selected);
+  border-color: var(--color-brand-solid);
+  color: var(--color-brand-solid);
+  font-weight: 600;
+}
+
+.optionDisabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.optionDisabled:active {
+  transform: none;
+}

@@ -1,0 +1,109 @@
+/* ===== 训练计划卡片 ===== */
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.summaryLabel {
+  color: var(--color-text-secondary);
+}
+
+.summaryValue {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+
+/* ===== 每日训练卡 ===== */
+
+.dayList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dayCard {
+  background: rgba(243, 243, 243, 0.6);
+  border-radius: 16px;
+  padding: 14px 16px;
+}
+
+.dayHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.dayLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-brand-solid);
+  background: var(--color-decor-light-green);
+  padding: 2px 10px;
+  border-radius: 8px;
+}
+
+.dayMeta {
+  margin-bottom: 10px;
+}
+
+.dayName {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--color-text-primary);
+  margin-bottom: 2px;
+}
+
+.dayStats {
+  display: block;
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+}
+
+/* ===== 动作列表 ===== */
+
+.exerciseList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exerciseItem {
+  display: flex;
+  align-items: baseline;
+  font-size: 13px;
+  line-height: 20px;
+  gap: 6px;
+}
+
+.exerciseDot {
+  color: var(--color-text-tertiary);
+  font-family: monospace;
+  flex-shrink: 0;
+  width: 12px;
+}
+
+.exerciseName {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.exerciseDetail {
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

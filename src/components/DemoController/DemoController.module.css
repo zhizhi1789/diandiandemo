@@ -1,0 +1,168 @@
+/* ===== 演示调试面板 ===== */
+
+.trigger {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: background 0.2s ease;
+}
+
+.trigger:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.triggerIcon {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 面板 */
+.panel {
+  position: fixed;
+  bottom: 56px;
+  right: 16px;
+  width: 220px;
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 16px;
+  z-index: 9999;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.panelTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+}
+
+.section {
+  margin-bottom: 12px;
+}
+
+.sectionLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 6px 0;
+  width: 100%;
+}
+
+.toggleLabel {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+  flex: 1;
+}
+
+.toggleSwitch {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  position: relative;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.toggleSwitchActive {
+  background: var(--color-brand-solid);
+}
+
+.toggleDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.2s;
+}
+
+.toggleDotActive {
+  transform: translateX(16px);
+}
+
+/* 按钮组 */
+.btnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.btn {
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btnDanger {
+  background: rgba(255, 59, 48, 0.2);
+  color: #FF6B6B;
+}
+
+.btnDanger:hover {
+  background: rgba(255, 59, 48, 0.35);
+}
+
+.phaseIndicator {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 4px 0;
+}
+
+.phaseBadge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-brand-solid);
+  background: rgba(79, 207, 188, 0.15);
+  border-radius: 6px;
+  margin-left: 4px;
+}

@@ -1,0 +1,39 @@
+.optionGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-option-gap);
+  row-gap: var(--spacing-option-vertical-gap);
+}
+
+.option {
+  background: #FFFFFF;
+  border: 0.5px solid var(--color-border-unselected);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.01);
+  border-radius: var(--radius-option);
+  padding: 8px 16px;
+  height: var(--size-option-height);
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.option:active {
+  transform: scale(0.97);
+}
+
+.selected {
+  background: linear-gradient(0deg, rgba(111, 210, 189, 0.06), rgba(111, 210, 189, 0.06)), #FFFFFF;
+  border-color: transparent;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.disabled:active {
+  transform: none;
+}

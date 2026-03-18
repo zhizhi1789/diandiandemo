@@ -1,0 +1,41 @@
+.tabBar {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: var(--color-bg-bottombar);
+  border-top: 0.5px solid rgba(20, 20, 20, 0.08);
+  flex-shrink: 0;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--color-text-tertiary);
+  position: relative;
+  padding: 4px 20px;
+  transition: color 0.2s ease;
+}
+
+.tab.active {
+  color: var(--color-brand-solid);
+}
+
+.tabLabel {
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 500;
+}
+
+.badge {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  width: 8px;
+  height: 8px;
+  background: #FF3B30;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-bg-bottombar);
+}

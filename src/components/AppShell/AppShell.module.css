@@ -1,0 +1,74 @@
+.phoneContainer {
+  width: var(--size-page-width);
+  height: var(--size-page-height);
+  border-radius: var(--radius-page);
+  overflow: hidden;
+  background: var(--color-bg-page);
+  position: relative;
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.statusBar {
+  height: var(--size-statusbar-height);
+  padding: 21px 26px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+  z-index: 10;
+  background: var(--color-bg-topbar);
+}
+
+.statusTime {
+  font-family: var(--font-system);
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+}
+
+.statusIcons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statusIcon {
+  color: var(--color-text-primary);
+}
+
+.content {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pageWrapper {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeIndicator {
+  height: var(--size-home-indicator);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 8px;
+  flex-shrink: 0;
+  background: inherit;
+}
+
+.homeIndicatorBar {
+  width: 139px;
+  height: 5px;
+  background: var(--color-text-primary);
+  border-radius: 2.5px;
+  opacity: 0.3;
+}

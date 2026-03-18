@@ -1,0 +1,66 @@
+.inputBar {
+  flex-shrink: 0;
+  background: var(--color-bg-bottombar);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-radius: var(--radius-bottombar) var(--radius-bottombar) 0 0;
+  padding: 10px 16px 0;
+  height: var(--size-inputbar-height);
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input {
+  flex: 1;
+  height: var(--size-input-height);
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-input);
+  box-shadow: 0px 0px 8px rgba(20, 20, 20, 0.04);
+  border-radius: var(--radius-input);
+  padding: 11px 16px;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--color-text-primary);
+}
+
+.input::placeholder {
+  color: var(--color-text-placeholder);
+}
+
+/* 当输入框有预设文本时高亮显示 */
+.inputPrefilled {
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.sendButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.sendButton:active {
+  opacity: 0.85;
+  transform: scale(0.93);
+}
+
+.sendButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.sendButtonHidden {
+  opacity: 0;
+  pointer-events: none;
+}

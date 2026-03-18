@@ -1,0 +1,7 @@
+/* ===== 日历确认卡片 ===== */
+
+.description {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-secondary);
+}

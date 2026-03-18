@@ -1,0 +1,45 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--color-card-bg);
+  box-shadow: var(--color-card-shadow);
+  border-radius: var(--radius-card);
+  padding: 20px 22px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:active {
+  transform: scale(0.98);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.06);
+}
+
+.info {
+  flex: 1;
+  min-width: 0;
+}
+
+.name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+}
+
+.lastMessage {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-tertiary);
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

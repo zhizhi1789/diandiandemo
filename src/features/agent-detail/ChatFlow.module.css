@@ -1,0 +1,32 @@
+.chatFlow {
+  display: flex;
+  flex-direction: column;
+  padding: 16px var(--spacing-page-x) 20px;
+}
+
+/* 不同发言者之间 28px 间距，同一发言者之间 8px */
+.messageGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.messageWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.spacingLarge {
+  margin-top: var(--spacing-message-large);
+}
+
+.spacingSmall {
+  margin-top: var(--spacing-message-small);
+}
+
+.systemMessage {
+  text-align: center;
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--color-text-tertiary);
+  padding: 8px 16px;
+}

@@ -1,0 +1,37 @@
+/* 共用基础样式 */
+.base {
+  background: var(--color-brand-primary);
+  border-radius: var(--radius-cta);
+  color: var(--color-text-white);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.base:active {
+  opacity: 0.85;
+  transform: scale(0.98);
+}
+
+.base:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* 胶囊按钮（小） */
+.capsule {
+  padding: 5px 16px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+/* 全宽按钮（大） */
+.full {
+  padding: 12px 0;
+  width: 100%;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center;
+}
