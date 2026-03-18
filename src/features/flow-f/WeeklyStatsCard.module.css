@@ -1,0 +1,93 @@
+/* ===== 周报统计卡片 ===== */
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+.title {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 24px;
+  color: var(--color-text-primary);
+}
+
+/* --- 数据网格 --- */
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.statItem {
+  background: rgba(243, 243, 243, 0.6);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.statLabel {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-text-tertiary);
+  margin-bottom: 6px;
+}
+
+.statValue {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--color-text-primary);
+}
+
+.statUnit {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-tertiary);
+}
+
+/* --- 亮点列表 --- */
+
+.highlightList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(111, 210, 189, 0.06);
+  border-radius: 14px;
+  padding: 14px 16px;
+}
+
+.highlightIcon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.highlightContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.highlightLabel {
+  font-size: 12px;
+  line-height: 18px;
+  color: var(--color-text-tertiary);
+}
+
+.highlightValue {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--color-text-primary);
+}

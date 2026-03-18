@@ -17,6 +17,7 @@ import ExerciseAdviceCard from '@/features/flow-b/ExerciseAdviceCard';
 import DataPermissionCard from '@/features/flow-c/DataPermissionCard';
 import TrainingSummaryCard from '@/features/flow-c/TrainingSummaryCard';
 import FlightSearchCard from '@/features/flow-e/FlightSearchCard';
+import WeeklyStatsCard from '@/features/flow-f/WeeklyStatsCard';
 import ChatFlow from './ChatFlow';
 import styles from './AgentDetailPage.module.css';
 
@@ -173,6 +174,19 @@ export default function AgentDetailPage() {
               onFeedbackSelect={(feedback) => {
                 handleAction('option-select', feedback);
               }}
+            />
+          );
+        }
+
+        case 'weekly-stats': {
+          const { totalDuration, totalCalories, favoriteExercise, peakHeartRate } =
+            message.cardData ?? {};
+          return (
+            <WeeklyStatsCard
+              totalDuration={totalDuration ?? 0}
+              totalCalories={totalCalories ?? 0}
+              favoriteExercise={favoriteExercise ?? ''}
+              peakHeartRate={peakHeartRate ?? 0}
             />
           );
         }

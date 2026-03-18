@@ -5,6 +5,7 @@ import { useCalendarStore } from '@/store/calendarStore';
 import type { CalendarEvent } from '@/types';
 import { flowBNodes } from './flow-b-script';
 import { flowCNodes } from './flow-c-script';
+import { flowFNodes } from './flow-f-script';
 
 /**
  * Flow A：首次建立训练计划
@@ -285,6 +286,8 @@ export function getFitnessCoachFullScript(): ChatScript {
       ...flowBNodes,
       // Flow C 节点
       ...flowCNodes,
+      // Flow F 节点（周报）
+      ...flowFNodes,
     ],
   };
 }

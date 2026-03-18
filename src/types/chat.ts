@@ -13,6 +13,7 @@ export type MessageContentType =
   | 'flight-search'
   | 'conflict-alert'
   | 'skill-recommend'
+  | 'weekly-stats'
   | 'image';
 
 export interface ChatMessage {

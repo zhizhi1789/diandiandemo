@@ -156,5 +156,6 @@ export const flowCNodes: ScriptNode[] = [
         handled: false,
       });
     },
+    nextNodeId: 'D1', // 串联 Flow F（周报）
   },
 ];
