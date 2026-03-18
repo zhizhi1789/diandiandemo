@@ -12,6 +12,7 @@ export type MessageContentType =
   | 'training-summary'
   | 'flight-search'
   | 'conflict-alert'
+  | 'skill-recommend'
   | 'image';
 
 export interface ChatMessage {

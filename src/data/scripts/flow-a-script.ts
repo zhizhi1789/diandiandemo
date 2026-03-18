@@ -10,7 +10,11 @@ import { flowCNodes } from './flow-c-script';
  * Flow A：首次建立训练计划
  *
  * 节点编排：
- * fw-2(用户输入目标) → A2(AI追问时间) → A3(用户回复时间) → A4(输出训练计划卡) → A5(日历确认卡) → A5-confirm(确认结果)
+ * fw-2(用户输入目标) → A2(AI追问时间) → A3(用户回复时间)
+ *   → A3-skill(Skill推荐卡) → A3-skill-confirm(用户选择)
+ *     → [使用] A3-skill-applied(AI确认已读取) → A4
+ *     → [不使用] → A4
+ *   → A4(输出训练计划卡) → A5(日历确认卡) → A5-confirm(确认结果)
  */
 export const flowAScript: ChatScript = {
   id: 'flow-a',
@@ -48,6 +52,61 @@ export const flowAScript: ChatScript = {
       id: 'A3',
       trigger: { type: 'user-input' },
       messages: [],
+      nextNodeId: 'A3-skill',
+    },
+
+    // A3-skill: Skill 推荐卡片（auto 2s，A3 之后自动出现）
+    {
+      id: 'A3-skill',
+      trigger: { type: 'auto', delayMs: 2000 },
+      messages: [
+        {
+          id: 'A3-skill-m1',
+          role: 'ai',
+          contentType: 'skill-recommend',
+          text: '',
+          cardData: {
+            recommendation:
+              '在小红书发现一个新手女性如何健身 Skill，和你身体条件和目标都很像哦，要试一下吗',
+            skillDescription:
+              '开始健身并且坚持下去并不容易，这是我健身5年，如何选教练，如何找健身房、新手期如何选动作，如何持续提升自己的动作 经验分享',
+            usageLabel: '1w+ 用户已使用',
+          },
+          timestamp: 0,
+          agentId: 'fitness-coach',
+        },
+      ],
+      nextNodeId: 'A3-skill-confirm',
+    },
+
+    // A3-skill-confirm: 等待用户选择「使用」或「不使用」
+    {
+      id: 'A3-skill-confirm',
+      trigger: { type: 'option-select' },
+      messages: [],
+      nextNodeId: (context: any) => {
+        if (context?.actionId === 'use') {
+          return 'A3-skill-applied';
+        }
+        // 不使用 → 直接进入 A4
+        return 'A4';
+      },
+    },
+
+    // A3-skill-applied: 用户选择「使用」后的 AI 回复
+    {
+      id: 'A3-skill-applied',
+      trigger: { type: 'auto', delayMs: 1500 },
+      messages: [
+        {
+          id: 'A3-skill-applied-m1',
+          role: 'ai',
+          contentType: 'text',
+          text: '已经读取了这份 Skill ✅ 参考了里面关于新手期选动作的建议，为你制定计划～',
+          timestamp: 0,
+          agentId: 'fitness-coach',
+        },
+      ],
       nextNodeId: 'A4',
     },
 

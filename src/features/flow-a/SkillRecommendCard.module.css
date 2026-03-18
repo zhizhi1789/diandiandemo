@@ -1,0 +1,70 @@
+/* ===== Skill 推荐卡片 ===== */
+
+.recommendation {
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--color-text-primary);
+}
+
+.usageBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 126, 87, 0.08);
+  color: #ff7e57;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.usageIcon {
+  font-size: 12px;
+}
+
+/* Skill 描述区域 */
+.skillBox {
+  background: rgba(111, 210, 189, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.skillHeader {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.skillIcon {
+  font-size: 14px;
+}
+
+.skillTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.skillDescription {
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.expandBtn {
+  background: none;
+  border: none;
+  color: var(--color-brand);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.expandBtn:active {
+  opacity: 0.7;
+}

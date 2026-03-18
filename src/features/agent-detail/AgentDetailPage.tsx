@@ -10,6 +10,7 @@ import { getPersonalAssistantFullScript } from '@/data/scripts/flow-e-script';
 import { useScriptedChat } from '@/hooks/useScriptedChat';
 import TrainingPlanCard from '@/features/flow-a/TrainingPlanCard';
 import CalendarConfirmCard from '@/features/flow-a/CalendarConfirmCard';
+import SkillRecommendCard from '@/features/flow-a/SkillRecommendCard';
 import TrainingReminderCard from '@/features/flow-b/TrainingReminderCard';
 import TodayTrainingCard from '@/features/flow-b/TodayTrainingCard';
 import ExerciseAdviceCard from '@/features/flow-b/ExerciseAdviceCard';
@@ -88,6 +89,21 @@ export default function AgentDetailPage() {
             <CalendarConfirmCard
               description={description}
               options={options}
+              onSelect={(optionId) => {
+                handleAction('option-select', optionId);
+              }}
+            />
+          );
+        }
+
+        case 'skill-recommend': {
+          const { recommendation, skillDescription, usageLabel } = message.cardData ?? {};
+          if (!recommendation || !skillDescription) return null;
+          return (
+            <SkillRecommendCard
+              recommendation={recommendation}
+              skillDescription={skillDescription}
+              usageLabel={usageLabel}
               onSelect={(optionId) => {
                 handleAction('option-select', optionId);
               }}
